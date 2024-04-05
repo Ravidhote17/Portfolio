@@ -12,3 +12,10 @@ function opentab(tabname){
   event.currentTarget.classList.add("active-link");
   document.getElementById(tabname).classList.add("active-tab")
 }
+
+var typed = new Typed(".auto-typed",{
+  strings: ["web developer.","coder.", "cricket enthusiast."],
+  typeSpeed: 75,
+  backSpeed: 50,
+  loop: true
+})
