@@ -34,6 +34,8 @@
     /* background-attachment: fixed; */
     /* scroll-behavior: smooth; */
     background-color: black;
+    position: relative;
+    overflow: hidden;
 }
 
 #home{
@@ -43,7 +45,6 @@
     width: 100%;
     
 }
-
 
 nav{
     height: 8vh;
@@ -95,6 +96,36 @@ nav{
 .nav-right a:nth-child(1){
     border-bottom: 2px solid white;
 }
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px white,
+    0 0 50px wheat,
+    0 0 100px whitesmoke;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: translateY(100vh) scale(5%);
+    }
+    100%{
+        transform: translateY(-10vh) scale(5%);
+    }
+}
+
 
 #home h4{
     color: #A0A0A0;
@@ -324,7 +355,6 @@ nav{
     justify-content: center;
     align-items: center;
     padding-top: 4vw;
-    /* min-height: 100vh; */
 }
 
 .timeline .timeline-row{
@@ -349,7 +379,6 @@ nav{
 
 .timeline-box .timeline-content{
     position: relative;
-    /* padding-left: 27px; */
 }
 
 .timeline-box .timeline-content::before{
@@ -384,21 +413,45 @@ nav{
     padding-top: 3vw;
 }
 
-.skill-icons{
-    font-size: 5vw;
+.skills-items{
+    margin-top: 5rem;
     display: grid;
-    grid-template-columns: repeat(3, 5fr);
-    grid-gap: 5vw;
-    margin-left: 15vw;
-    /* margin-top: 6vw; */
-    padding: 5vw 10vw;
-    transition: all 0.5s;
-    color: #262626;
+    grid-template-columns: repeat(3,1fr);
+    gap: 6rem;
 }
-/* 
-.skill-icons:hover {
-    font-size: 16vw;
+
+.skill-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.skill-card:hover{
+    color: #00abf0;
+    background-repeat: 1rem solid;
+    transform: scale(1.2);
+
+}
+
+.skill-card .fa-brands h3{
+    font-size: 1px;
+}
+
+.skill-card .fa-brands{
+    font-size: 3.5rem;
+    transition: 0.5s ease;
+}
+
+/* .skill-card .fa-brands:hover{
 } */
+
+.skill-card p{
+    text-align: center;
+    opacity: 0.5;
+}
 
 .projects{
     height: 100vh;
